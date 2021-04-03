@@ -1,5 +1,3 @@
-from controllers.member_controller import member
-from controllers.exclass_controller import exclass
 from flask import Flask, render_template, request, redirect, Blueprint
 
 from models.booking import Booking
@@ -8,15 +6,19 @@ import repositories.exclass_repository as exclass_repository
 import repositories.member_repository as member_repository
 import repositories.booking_repository as booking_repository
 
-bookings_blueprint = Blueprint("bookins", __name__)
+bookings_blueprint = Blueprint("bookings", __name__)
 
-@bookings_blueprint.rout("/classes")
+@bookings_blueprint.route("/bookings")
 def bookins():
     bookings = booking_repository.select_all()
-    return render_template('bookins/index.html', booking=bookings)
+    return render_template('bookings/index.html', bookings = bookings)
     
 
-#ADD MEMEBER TO CLASS 
+#GET BOOKINGS
+
+#ADD/CREATE NEW BOOKING ADD MEMEBER TO CLASS 
+
+#DELETE BOOKINGS BY ID
 
 #UPDATE MEMBER IN CLASS
 

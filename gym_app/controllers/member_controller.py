@@ -14,3 +14,11 @@ def members():
 def show(id):
     member = member_repository.select(id)
     return render_template("members/show.html", member = member)
+
+# GET CURRENT MEMBERS 
+
+# CREATE / ADD NEW MEMBER TO MEMBERS
+
+# UPDATE MEMEBER DETAILS
+
+# DELETE MEMBER FROM MEMBERS
