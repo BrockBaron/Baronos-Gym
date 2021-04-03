@@ -21,6 +21,6 @@ CREATE TABLE members (
 
 CREATE TABLE bookings (
     id SERIAL PRIMARY KEY,
-    member_id INT references(member_id) ON DELETE CASCADE,
-    class_id INT references(class_id) ON DELETE CASCADE
+    member_id INT REFERENCES member(id) ON DELETE CASCADE,
+    class_id INT REFERENCES class(id) ON DELETE CASCADE
 );
