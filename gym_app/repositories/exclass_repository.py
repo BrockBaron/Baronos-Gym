@@ -1,15 +1,9 @@
-from controllers.member_controller import members
-
-from flask import Flask, render_template, request, redirect, Blueprint
-
+from db.run_sql import run_sql
 from models.exclass import Class
+from models.member import Member
 
-import repositories.member_repository as member_repository
-import repositories.exclass_repository as exclass_repository
+#save new exclass
 
-exclass_blueprint = Blueprint('/classes', __name__)
+#show exclasses
 
-@exclass_blueprint.route("/classes")
-def exclass():
-    classes = exclass_repository.select_all()
-    return render_template('classes/index.html', classes=classes)
+#new exclasses
