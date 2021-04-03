@@ -20,6 +20,8 @@ def show(id):
     members = member_repository.get_by_class(exclass)
     return render_template('classes//show.html', exclass = exclass, members = members)
 
+#GET CLASSESS 
+
 #CREATE NEW CLASS
 
 #UPDATED CLASS
