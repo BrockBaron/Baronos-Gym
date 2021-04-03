@@ -2,8 +2,12 @@ from db.run_sql import run_sql
 from models.exclass import Class
 from models.member import Member
 
-#save new exclass
+# save new exclass
 
-#show exclasses
+# select all classes
 
-#new exclasses
+# select specific class by id
+
+# delete all exclassess
+
+# delete specific exclass by id
