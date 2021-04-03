@@ -18,7 +18,7 @@ def classes():
 def show(id):
     exclass = exclass_repository.select(id)
     members = member_repository.get_by_class(exclass)
-    return render_template('classes//show.html', exclass = exclass, members = members)
+    return render_template('classes/show.html', exclass = exclass, members = members)
 
 #GET CLASSESS 
 
@@ -27,3 +27,5 @@ def show(id):
 #UPDATED CLASS
 
 #DELETE CLASS
+
+#DELETE ALL CLASSESS
