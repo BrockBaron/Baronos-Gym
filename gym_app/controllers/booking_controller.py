@@ -36,8 +36,10 @@ def new_booking():
 #POST '/bookings'
 @bookings_blueprint.route('/bookings', methods=['POST'])
 def create_booking():
-    member = request.form['member']
-    exclass = request.form['exclass']
+    member_id = request.form['member_id']
+    exclass_id = request.form['exclass_id']
+    member = member_repository.select(member_id)
+    exclass = exclass_repository.select(exclass_id)
     booking = Booking(member, exclass)
     booking_repository.save(booking)
     return redirect('/bookings')
@@ -61,6 +63,13 @@ def show_members_in_exclass(id):
 
 #EDIT
 # GET '/bookings/<id>/edit'
+@bookings_blueprint.route('/bookings/<id>/edit', methods = ['GET'])
+def edit_booking(id):
+    exclass = exclass_repository.select(id)
+    members = member_repository.select_all()
+    return redirect('/bookings/edit.html', exclass = exclass, members = members)
+    
+
 
 #UPDATED
 # PUT '/bookins/<id>'
