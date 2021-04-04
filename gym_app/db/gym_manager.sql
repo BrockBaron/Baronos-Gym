@@ -2,7 +2,7 @@ DROP TABLE bookings;
 DROP TABLE members;
 DROP TABLE classes;
 
-CREATE TABLE classes (
+CREATE TABLE exclasses (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     type VARCHAR(255),
@@ -21,5 +21,5 @@ CREATE TABLE members (
 CREATE TABLE bookings (
     id SERIAL PRIMARY KEY,
     member_id INT REFERENCES member(id) ON DELETE CASCADE,
-    class_id INT REFERENCES class(id) ON DELETE CASCADE
+    exclass_id INT REFERENCES exclass(id) ON DELETE CASCADE
 );

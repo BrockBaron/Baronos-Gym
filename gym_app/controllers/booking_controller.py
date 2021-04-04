@@ -49,11 +49,11 @@ def create_booking():
 #/bookings/<id>/ 
 @bookings_blueprint.route('/bookings/<id>')
 def show_booking(id):
-    booking =booking_repository.select(id)
+    booking = booking_repository.select(id)
     return render_template('bookings/show.html', booking=booking)
 
 
-# SHOW - member in particular class - need an alternative route?
+# SHOW - member in particular class - need an alternative route? '/bookings/<id>/exclass'?
 @bookings_blueprint.route('/bookings/<id>')
 def show_members_in_exclass(id):
     exclass = exclass_repository.select(id)
