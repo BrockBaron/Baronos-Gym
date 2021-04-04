@@ -30,8 +30,13 @@ def select_all():
 
     
 # delete all bookings
-
+def delete_all():
+    sql = "DELETE FROM bookings"
+    run_sql(sql)
+    
 # delete individual booking by id
+
+
 
 # ??show all members booked on specific class?? take/replace code from member repo 
 
