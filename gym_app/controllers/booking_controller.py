@@ -13,6 +13,12 @@ def bookins():
     bookings = booking_repository.select_all()
     return render_template('bookings/index.html', bookings = bookings)
     
+# @exclass_blueprint.route('/classes/<id>')
+# def show(id):
+#     exclass = exclass_repository.select(id)
+#     members = member_repository.get_by_class(exclass)
+#     return render_template('classes/show.html', exclass = exclass, members = members)
+
 
 #GET BOOKINGS
 

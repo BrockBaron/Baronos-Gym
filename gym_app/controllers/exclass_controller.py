@@ -1,7 +1,7 @@
 from controllers.member_controller import member
 from flask import Flask, render_template, request, redirect, Blueprint
 
-from models.exclass import Class
+from models.exclass import Exclass
 
 import repositories.exclass_repository as exclass_repository
 import repositories.member_repository as member_repository
@@ -17,12 +17,18 @@ def classes():
 @exclass_blueprint.route('/classes/<id>')
 def show(id):
     exclass = exclass_repository.select(id)
-    members = member_repository.get_by_class(exclass)
-    return render_template('classes/show.html', exclass = exclass, members = members)
+    return render_template('classes/show.html', exclass = exclass)
 
-#GET CLASSESS 
+#NEW GET CLASSESS 
+@exclass_blueprint.route('/classes/new', methods=['GET'])
+def new_task():
+    exclasses = exclass_repository.select_all()
+    return render_template('classes/new.html', all_classes = exclasses)
 
-#CREATE NEW CLASS
+
+
+#CREATE POST CLASSES
+
 
 #UPDATED CLASS
 

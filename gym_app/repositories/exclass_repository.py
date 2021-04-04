@@ -44,3 +44,9 @@ def delete(id):
     sql = "DELETE FROM exclasses WHERE id = %s"
     values = [id]
     run_sql(sql, values)[0]
+    
+# update specific exclass
+def update(exclass):
+    sql = "UPDATE exclasses SET (name, activity_type, duration, capacity) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [exclass.name, exclass.activity_type, exclass.duration, exclass.capacity, exclass.id]
+    run_sql(sql, values)
