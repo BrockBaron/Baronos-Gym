@@ -58,9 +58,9 @@ def delete(id):
 
 
 # get member by booking
-def get_by_booking(booking):
-    sql = "SELECT members.* FROM members INNER JOIN bookings ON members.id = bookings.member_id WHERE booking.exclass_id = %s"
-    values = [booking.id]
+def get_by_exclass(exclass):
+    sql = "SELECT members.* FROM members INNER JOIN bookings ON members.id = bookings.member_id WHERE bookings.exclass_id = %s"
+    values = [exclass.id]
     results = run_sql(sql, values)
     
     members = []
