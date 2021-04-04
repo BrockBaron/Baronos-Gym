@@ -35,7 +35,10 @@ def delete_all():
     run_sql(sql)
     
 # delete individual booking by id
-
+def delete(id):
+    sql = "DELETE FROM bookings WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
 
 
 # ??show all members booked on specific class?? take/replace code from member repo 
