@@ -25,7 +25,7 @@ def new_task():
 #CREATE 
 #POST '/classes' - possibly need to route to a create path for pop-up from etc. '/classes/create'
 @exclass_blueprint.route('/classes', methods=['POST'])
-def create_task():
+def create_exclass():
     name = request.form['name']
     activity_type = request.form['activity_type']
     duration = request.form['duration']
@@ -37,14 +37,14 @@ def create_task():
 # SHOW 
 #'/classes/<id>/  - possible GET method needed
 @exclass_blueprint.route('/classes/<id>')
-def show(id):
+def show_exclass(id):
     exclass = exclass_repository.select(id)
     return render_template('classes/show.html', exclass = exclass)
 
 #EDIT
 # GET '/classes/<id>/edit'
 @exclass_blueprint.route('/classes/<id>/edit', methods=['GET'])
-def edit_task(id):
+def edit_exclass(id):
     exclass = exclass_repository.select(id)
     return render_template('classes/edit.html', exclass = exclass)
 
@@ -52,11 +52,18 @@ def edit_task(id):
 #UPDATED
 # PUT '/classes/<id>'
 @exclass_blueprint.route('/classes/<id>', methods=['POST'])
-def update_task(id):
+def update_exclass(id):
+    name = request.form['name']
+    activity_type = request.form['activity_type']
+    duration = request.form['duration']
+    capacity = request.form['capacity']
+    exclass = Exclass(name, activity_type, duration, capacity, id)
+    exclass_repository.update(exclass)
+    return render_template('/classes')
+    
     
     
 
 
 #DELETE CLASS
 
-#DELETE ALL CLASSESS
