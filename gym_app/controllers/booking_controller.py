@@ -72,13 +72,22 @@ def edit_booking(id):
 
 
 #UPDATED
-# PUT '/bookins/<id>'
+# PUT '/bookings/<id>'
+@bookings_blueprint.route('/bookings/<id>', methods=['POST'])
+def update_booking(id):
+    member_id = request.form['member_id']
+    exclass_id = request.form['exclass_id']
+    member = member_repository.select(member_id)
+    exclass = exclass_repository.select(exclass_id)
+    booking = Booking(member, exclass, id)
+    booking_repository.update(booking)
+    return redirect('/bookings')
 
 
 
 
 #DELETE 
-# DELETE '/bookins/<id>'
+# DELETE '/bookings/<id>'
 @bookings_blueprint.route('/bookins/<id>/delete', methods = ['POST'])
 def delete_booking(id):
     booking_repository.delete(id)
