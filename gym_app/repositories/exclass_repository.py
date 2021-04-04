@@ -4,7 +4,7 @@ from models.member import Member
 
 # save new exclass
 def save(exclass):
-    sql = "INSERT INTO exclass(name, activity_type, duration, capacity) VALUES (%s, %s, %s, %s) RETURNING id"
+    sql = "INSERT INTO exclasses(name, activity_type, duration, capacity) VALUES (%s, %s, %s, %s) RETURNING id"
     values = [exclass.name, exclass.activity_type, exclass.duration, exclass.capacity]
     results = run_sql(sql, values)
     exclass.id == results[0]['id']
@@ -24,6 +24,15 @@ def select_all():
 
 
 # select specific class by id
+def select(id):
+    exclass = None
+    sql = 'SELECT * FROM exclasses WHERE id = %s'
+    values = [id]
+    results = run_sql(sql, values)[0]
+    
+    if results is not None:
+        exclass = Exclass(results['name'], results['activity_type'], results['duration'], results['capacity'], results['id'])
+    return exclass
 
 # delete all exclassess
 
