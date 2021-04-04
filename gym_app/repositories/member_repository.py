@@ -27,6 +27,17 @@ def select_all():
 
 # selct by specific member by id
 
+def select(id):
+    member =None
+    sql = "SELECT * FROM members WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)[0]
+    
+    if results is not None:
+        member = Member(results[0]['first_name'], results['last_name'], results['age'], results['sex'], results['id'])
+    return member
+
+
 # delete members
 
 # get member by booking
