@@ -10,15 +10,29 @@ def members():
     members = member_repository.select_all()
     return render_template("members/index.html", members = members)
 
+#NEW 
+#GET '/members/new'
+@members_blueprint.route('/members/new', methods=['GET'])
+def new_member():
+    members = member_repository.select_all()
+    return render_template("members/new.html", all_members = members)
+
+#CREATE 
+#POST '/members'
+
+# SHOW 
+#/members/<id>/ 
 @members_blueprint.route("/members/<id>")
-def show(id):
+def show_member(id):
     member = member_repository.select(id)
     return render_template("members/show.html", member = member)
 
-# GET CURRENT MEMBERS 
 
-# CREATE / ADD NEW MEMBER TO MEMBERS
+#EDIT
+# GET '/members/<id>/edit'
 
-# UPDATE MEMEBER DETAILS
+#UPDATED
+# PUT '/members/<id>'
 
-# DELETE MEMBER FROM MEMBERS
+#DELETE 
+# DELETE '/members/<id>'
