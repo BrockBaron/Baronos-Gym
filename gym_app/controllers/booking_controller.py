@@ -12,12 +12,6 @@ bookings_blueprint = Blueprint("bookings", __name__)
 def bookins():
     bookings = booking_repository.select_all()
     return render_template('bookings/index.html', bookings = bookings)
-    
-# @exclass_blueprint.route('/classes/<id>')
-# def show(id):
-#     exclass = exclass_repository.select(id)
-#     members = member_repository.get_by_class(exclass)
-#     return render_template('classes/show.html', exclass = exclass, members = members)
 
 
 #GET BOOKINGS
@@ -29,3 +23,34 @@ def bookins():
 #UPDATE MEMBER IN CLASS
 
 #REMOVE MEMEBR FROM CLASS
+
+#NEW 
+#GET '/bookings/new'
+
+#CREATE 
+#POST '/bookings'
+
+# SHOW 
+#/bookings/<id>/ 
+@bookings_blueprint.route('/bookings/<id>')
+def show_booking(id):
+    booking =booking_repository.select(id)
+    return render_template('bookings/show.html', booking=booking)
+
+
+# SHOW - member in particular class - need an alternative route?
+@bookings_blueprint.route('/bookings/<id>')
+def show_members_in_exclass(id):
+    exclass = exclass_repository.select(id)
+    members = member_repository.get_by_exclass(exclass)
+    return render_template('bookings/show.html', exclass = exclass, members = members)
+
+
+#EDIT
+# GET '/bookings/<id>/edit'
+
+#UPDATED
+# PUT '/bookins/<id>'
+
+#DELETE 
+# DELETE '/bookins/<id>'
