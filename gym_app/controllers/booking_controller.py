@@ -34,7 +34,15 @@ def new_booking():
 
 #CREATE 
 #POST '/bookings'
-
+@bookings_blueprint.route('/bookings', methods=['POST'])
+def create_booking():
+    member = request.form['member']
+    exclass = request.form['exclass']
+    booking = Booking(member, exclass)
+    booking_repository.save(booking)
+    return redirect('/bookings')
+    
+    
 # SHOW 
 #/bookings/<id>/ 
 @bookings_blueprint.route('/bookings/<id>')
