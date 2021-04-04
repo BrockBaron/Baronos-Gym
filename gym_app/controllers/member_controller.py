@@ -29,7 +29,6 @@ def create_member():
     member_repository.save(member)
     return redirect('/members')
     
-    
 # SHOW 
 #/members/<id>/ 
 @members_blueprint.route("/members/<id>")
@@ -40,6 +39,11 @@ def show_member(id):
 
 #EDIT
 # GET '/members/<id>/edit'
+@members_blueprint.route('/members/<id>/edit', methods = ['GET'])
+def edit_member(id):
+    member = member_repository.select(id)
+    return render_template("members/edit.html", member = member)
+
 
 #UPDATED
 # PUT '/members/<id>'
