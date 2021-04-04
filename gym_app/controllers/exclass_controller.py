@@ -32,16 +32,30 @@ def create_task():
     capacity = request.form['capacity']
     exclass = Exclass(name, activity_type, duration, capacity)
     exclass_repository.save(exclass)
-    return redirect('/classes')
+    return redirect('/classes') # possible rediretect to differnt location
 
 # SHOW 
-# '/classes/<id>/
+#'/classes/<id>/  - possible GET method needed
 @exclass_blueprint.route('/classes/<id>')
 def show(id):
     exclass = exclass_repository.select(id)
     return render_template('classes/show.html', exclass = exclass)
 
-#UPDATED CLASS
+#EDIT
+# GET '/classes/<id>/edit'
+@exclass_blueprint.route('/classes/<id>/edit', methods=['GET'])
+def edit_task(id):
+    exclass = exclass_repository.select(id)
+    return render_template('classes/edit.html', exclass = exclass)
+
+
+#UPDATED
+# PUT '/classes/<id>'
+@exclass_blueprint.route('/classes/<id>', methods=['POST'])
+def update_task(id):
+    
+    
+
 
 #DELETE CLASS
 
