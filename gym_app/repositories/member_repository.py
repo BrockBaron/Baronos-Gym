@@ -14,6 +14,17 @@ def save(member):
     
 # select all members
 
+def select_all():
+    members = []
+    
+    sql = "SELECT * FROM members"
+    results = run_sql(sql,)
+    
+    for row in results:
+        member = Member(row['first_name'], row['last_name'], row['age'], row['sex'], row['id'])
+        members.append(member)
+    return members
+
 # selct by specific member by id
 
 # delete members
