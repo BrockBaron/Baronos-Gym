@@ -8,7 +8,6 @@ CREATE TABLE classes (
     type VARCHAR(255),
     duration INT,
     cpacity INT,
-    sex_preferences VARCHAR(255)
 );
 
 CREATE TABLE members (
