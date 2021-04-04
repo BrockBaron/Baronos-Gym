@@ -1,3 +1,4 @@
+import re
 from db.run_sql import run_sql
 from models.booking import Booking
 
@@ -14,7 +15,20 @@ def save(booking):
 
 
 # select all bookings
+def select_all():
+    bookings = []
+    
+    sql = "SELECT * FROM bookings"
+    results = run_sql(sql)
+    
+    for row in results:
+        member = member_repository.select(row['member_id'])
+        exclass = exclass_repository.select(row['exclass_id'])
+        booking = Booking(member, exclass, row['id'])
+        bookings.append(booking)
+    return booking
 
+    
 # delete all bookings
 
 # delete individual booking by id
