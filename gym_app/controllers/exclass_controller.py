@@ -13,22 +13,33 @@ def classes():
     classes = exclass_repository.select_all()
     return render_template('classess/index.html', classes = classes)
 
-# SHOW CLASSES
-@exclass_blueprint.route('/classes/<id>')
-def show(id):
-    exclass = exclass_repository.select(id)
-    return render_template('classes/show.html', exclass = exclass)
 
-#NEW GET CLASSESS 
+#NEW 
+#GET '/classes/new' 
 @exclass_blueprint.route('/classes/new', methods=['GET'])
 def new_task():
     exclasses = exclass_repository.select_all()
     return render_template('classes/new.html', all_classes = exclasses)
 
 
+#CREATE 
+#POST '/classes' - possibly need to route to a create path for pop-up from etc. '/classes/create'
+@exclass_blueprint.route('/classes', methods=['POST'])
+def create_task():
+    name = request.form['name']
+    activity_type = request.form['activity_type']
+    duration = request.form['duration']
+    capacity = request.form['capacity']
+    exclass = Exclass(name, activity_type, duration, capacity)
+    exclass_repository.save(exclass)
+    return redirect('/classes')
 
-#CREATE POST CLASSES
-
+# SHOW 
+# '/classes/<id>/
+@exclass_blueprint.route('/classes/<id>')
+def show(id):
+    exclass = exclass_repository.select(id)
+    return render_template('classes/show.html', exclass = exclass)
 
 #UPDATED CLASS
 
