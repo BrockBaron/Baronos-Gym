@@ -60,10 +60,13 @@ def update_exclass(id):
     exclass = Exclass(name, activity_type, duration, capacity, id)
     exclass_repository.update(exclass)
     return render_template('/classes')
-    
-    
-    
+
+#DELETE 
+# DELETE '/classes/<id>'
+@exclass_blueprint.route('/classes/<id>/delete', methods=['POST'])
+def delete_exclass(id):
+    exclass_repository.delete(id)
+    return redirect('/classes')
 
 
-#DELETE CLASS
 
