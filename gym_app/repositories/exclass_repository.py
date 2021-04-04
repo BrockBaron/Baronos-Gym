@@ -39,6 +39,8 @@ def delete_all():
     sql = "DELETE FROM exclasses"
     run_sql(sql)
 
-
-
 # delete specific exclass by id
+def delete(id):
+    sql = "DELETE FROM exclasses WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)[0]
