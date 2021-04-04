@@ -65,7 +65,7 @@ def get_by_exclass(exclass):
     
     members = []
     for row in results:
-        member = Member(row['name'], row['id'])
+        member = Member(row['first_name'], row['last_name'], row['age'], row['sex'], row['id'])
         members.append(member)
     
     return members
