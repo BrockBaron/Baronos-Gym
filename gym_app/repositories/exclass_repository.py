@@ -35,5 +35,10 @@ def select(id):
     return exclass
 
 # delete all exclassess
+def delete_all():
+    sql = "DELETE FROM exclasses"
+    run_sql(sql)
+
+
 
 # delete specific exclass by id
