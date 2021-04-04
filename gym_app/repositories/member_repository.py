@@ -44,6 +44,10 @@ def update(member):
 
 
 # delete all members
+def delete_all():
+    sql = "DELETE FROM members"
+    run_sql(sql)
+
 
 # delete specific
 
