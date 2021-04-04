@@ -4,6 +4,14 @@ from models.member import Member
 
 # add / save new member 
 
+def save(member):
+    sql = "INSERT INTO members (first_name, last_name, age, sex) VALUES (%s, %s, %s, %s) RETURNING *"
+    values = [member.first_name, member.last_, member.age, member.sex]
+    results = run_sql(sql, values)
+    id = results[0]['id']
+    member.id = id
+    return member
+    
 # select all members
 
 # selct by specific member by id
