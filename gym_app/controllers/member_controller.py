@@ -48,7 +48,7 @@ def edit_member(id):
 #UPDATED
 # PUT '/members/<id>'
 @members_blueprint.route('/members/<id>', methods=['POST'])
-def update_exclass(id):
+def update_member(id):
     first_name = request.form['first_name']
     second_name = request.form['second_name']
     age = request.form['age']
@@ -59,3 +59,7 @@ def update_exclass(id):
 
 #DELETE 
 # DELETE '/members/<id>'
+@members_blueprint.route('/members/<id>/delete')
+def delete_member(id):
+    member_repository.delete(id)
+    return render_template("/members")
