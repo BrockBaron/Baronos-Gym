@@ -19,7 +19,17 @@ def new_member():
 
 #CREATE 
 #POST '/members'
-
+@members_blueprint.route('/members', methods=['POST'])
+def create_member():
+    first_name = request.form['first_name']
+    second_name = request.form['second_name']
+    age = request.form['age']
+    sex = request.form['sex']
+    member = Member(first_name, second_name, age, sex)
+    member_repository.save(member)
+    return redirect('/members')
+    
+    
 # SHOW 
 #/members/<id>/ 
 @members_blueprint.route("/members/<id>")
