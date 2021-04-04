@@ -4,7 +4,7 @@ from models.booking import Booking
 class TestBooking(unittest.TestCase):
     
     def setUp(self):
-        self.booking = Booking("Max Power", "Big Lift")
+        self.booking = Booking("Max Power", "Power House")
 
 
 #1 booking has name 
@@ -15,5 +15,5 @@ class TestBooking(unittest.TestCase):
 #2 booking has exclasses
     @unittest.skip("Delete this line to run the test")
     def test_booking_has_exclasses(self):
-        self.assertEqual("Big Lift", self.booking.exclass)
+        self.assertEqual("Power House", self.booking.exclass)
     
