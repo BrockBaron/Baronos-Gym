@@ -37,9 +37,16 @@ def select(id):
         member = Member(results[0]['first_name'], results['last_name'], results['age'], results['sex'], results['id'])
     return member
 
+# update member
+def update(member):
+    sql = "UPDATE me SET (first_name, last_name, age, sex) = (%s, %s, %s, %s,) WHERE id = %s"
+    values = [member.first_name, member.last_name, member.age, member.sex, member.id]
 
-# delete members
+
+# delete all members
+
+# delete specific
+
+
 
 # get member by booking
-
-# get member by exclass
