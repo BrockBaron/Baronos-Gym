@@ -9,20 +9,9 @@ import repositories.booking_repository as booking_repository
 bookings_blueprint = Blueprint("bookings", __name__)
 
 @bookings_blueprint.route("/bookings")
-def bookins():
+def booking():
     bookings = booking_repository.select_all()
     return render_template('bookings/index.html', bookings = bookings)
-
-
-#GET BOOKINGS
-
-#ADD/CREATE NEW BOOKING ADD MEMEBER TO CLASS 
-
-#DELETE BOOKINGS BY ID
-
-#UPDATE MEMBER IN CLASS
-
-#REMOVE MEMEBR FROM CLASS
 
 #NEW 
 #GET '/bookings/new'

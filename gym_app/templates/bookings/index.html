@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Bookings</h1>
+
+    <table>
+    <tr>
+        <th>Member Id</th>
+        <th>Class Id</th>
+        <th>Edit Booking Info</th>
+    </tr>
+    {% for booking in bookings %}
+    <tr>
+        <td>{{ booking.member.id}}</td>
+        <td>{{ booking.member.first_name}} {{booking.member.second_name}}</td>
+        
+        
+    </tr>
+    {% endfor%}
+    </table>
+{% endblock %}

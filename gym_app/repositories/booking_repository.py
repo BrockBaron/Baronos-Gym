@@ -25,7 +25,7 @@ def select_all():
         exclass = exclass_repository.select(row['exclass_id'])
         booking = Booking(member, exclass, row['id'])
         bookings.append(booking)
-    return booking
+    return bookings
 
     
 # delete all bookings
