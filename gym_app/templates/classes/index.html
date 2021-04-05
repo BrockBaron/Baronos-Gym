@@ -2,24 +2,32 @@
 
 {% block content %}
 <h1>Classes</h1>
+<div>
+  <table>
+    <tr>
+        <th>Class Name</th>
+        <th>Class Type</th>
+        <th>Duration</th>
+        <th>Capacity</th>
+        <th>Edit Class Info</th>
+    </tr>
+    {% for exclass in exclasses %}
+    <tr>
+        <td>{{ exclass.name}}</a></td>
+        <td> {{ exclass.activity_type}}</a></td>
+        <td>{{ exclass.duration}}</a></td>
+        <td> {{ exclass.capacity }}</td>
+        <td><a href="/classes/<id>/edit{{ exclass.id }}" </a> Info</td>
+        
+    </tr>
+    {% endfor%}
+  </table>
+</div>
 
-<table>
-  <tr>
-      <th>Class Name</th>
-      <th>Class Type</th>
-      <th>Duration</th>
-      <th>Capacity</th>
-      <th>Edit Class Info</th>
-  </tr>
-  {% for exclass in exclasses %}
-  <tr>
-      <td>{{ exclass.name}}</a></td>
-      <td> {{ exclass.activity_type}}</a></td>
-      <td>{{ exclass.duration}}</a></td>
-      <td> {{ exclass.capacity }}</td>
-      <td><a href="/classes/<id>/edit{{ exclass.id }}" </a> Info</td>
-      
-  </tr>
-  {% endfor%}
-</table>
+<div>
+  <button> <a href="/classes/new">ADD MEMBER</a></button>
+</div>
+<div>
+  <button> <a href="/classes/<id>/edit">EDIT MEMBER</a></button>
+</div>
 {% endblock %}

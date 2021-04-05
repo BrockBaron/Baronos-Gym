@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2> ADD NEW CLASS</h2>
+
+    <form action="/classes" method="post">
+        <div>
+        <label for='name'> Class Name</label>
+            <input type="text" name='name' id='name'>
+        </div>
+        
+        <div>
+        <label for='activity_type'> Activity Type</label>
+            <input type="text" name='activity_type' id='activity_type'>
+        </div>
+        
+        <div>
+        <label for="duration">Duration</label>
+            <input type="int" name="duration" id="duration">
+        </div> 
+
+        <div>
+        <label for="capacity">Capacity</label>
+            <input type="int" name="capacity" id="capacity">
+        <div></div>
+        
+        <input type="submit" value="Add Class">
+    </form>
+
+
+{% endblock content %}
