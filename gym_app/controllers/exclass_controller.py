@@ -11,13 +11,13 @@ exclasses_blueprint = Blueprint("classes", __name__)
 @exclasses_blueprint.route('/classes')
 def classes():
     classes = exclass_repository.select_all()
-    return render_template('classes/index.html', classes = classes)
+    return render_template('classes/index.html', exclasses = classes)
 
 
 #NEW 
 #GET '/classes/new' 
 @exclasses_blueprint.route('/classes/new', methods=['GET'])
-def new_task():
+def new_exclass():
     exclasses = exclass_repository.select_all()
     return render_template('classes/new.html', all_classes = exclasses)
 

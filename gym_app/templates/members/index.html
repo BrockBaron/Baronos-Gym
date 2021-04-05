@@ -9,14 +9,16 @@
         <th>Second Name</th>
         <th>Age</th>
         <th>Sex</th>
+        <th>Edit</th>
     
     </tr>
-    {% for user in users %}
+    {% for member in members %}
     <tr>
-        <td><a href="/members/{{ member.id }}"> {{member.first_name}} </a></td>
-        <td><a href="/members/{{ member.id }}"> {{member.second_name}} </a></td>    
-        <td><a href="/members/{{ member.id }}"> {{member.age}} </a></td>    
-        <td><a href="/members/{{ member.id }}"> {{member.sex}} </a></td>     
+        <td> {{member.first_name}} </a></td>
+        <td> {{member.second_name}} </a></td>    
+        <td> {{member.age}} </a></td>    
+        <td> {{member.sex}} </a></td> 
+        <td><a href="/members/<id>/edit{{ member.id }}"></a>Edit</td>   
     </tr>
     {% endfor %}
 </table>

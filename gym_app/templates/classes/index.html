@@ -5,16 +5,21 @@
 
 <table>
   <tr>
-    <th>Name</th>
-    <th></th>
-    <th>Category</th>
+      <th>Class Name</th>
+      <th>Class Type</th>
+      <th>Duration</th>
+      <th>Capacity</th>
+      <th>Edit Class Info</th>
   </tr>
-  {% for location in locations %}
+  {% for exclass in exclasses %}
   <tr>
-    <td><a href="/classes/{{ exclass.id }}"> {{exclass.name}} </a></td>
-    <td>|</td>
-    <td><a href="/classes/{{ exclass.id }}"> {{exclass.name}} </a></td>
+      <td>{{ exclass.name}}</a></td>
+      <td> {{ exclass.activity_type}}</a></td>
+      <td>{{ exclass.duration}}</a></td>
+      <td> {{ exclass.capacity }}</td>
+      <td><a href="/classes/<id>/edit{{ exclass.id }}" </a> Info</td>
+      
   </tr>
-  {% endfor %}
+  {% endfor%}
 </table>
 {% endblock %}
