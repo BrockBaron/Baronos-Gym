@@ -1,4 +1,4 @@
-from controllers.member_controller import member
+from controllers.member_controller import members
 from flask import Flask, render_template, request, redirect, Blueprint
 
 from models.exclass import Exclass
