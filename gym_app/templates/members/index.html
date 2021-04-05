@@ -9,7 +9,7 @@
         <th>Second Name</th>
         <th>Age</th>
         <th>Sex</th>
-        <th>Edit</th>
+        <th>Edit Memeber</th>
     
     </tr>
     {% for member in members %}
@@ -18,7 +18,7 @@
         <td> {{member.second_name}} </a></td>    
         <td> {{member.age}} </a></td>    
         <td> {{member.sex}} </a></td> 
-        <td><a href="/members/<id>/edit{{ member.id }}"></a>Edit</td>   
+        <td><a href="/members/<id>/edit{{ member.id }}" </a> Info</td>  
     </tr>
     {% endfor %}
 </table>
