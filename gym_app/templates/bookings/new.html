@@ -1,28 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Add Booking</h1>
+    <h2>Add Booking</h2>
 
-<form action="/bookings" method="post">
-    <div>
+    <form action="/bookings" method="post">
+        <div>
         <label for="member" > Select Member:</label>
-        <select name="member_id" id="member"  required>
-        {% for member in members %}
-        <option value="{{member.id}}"> {{member.full_name()}}</option>
-        {% endfor %}
-        </select>
-    </div>
-    
-    <div>    
+            <select name="member_id" id="member"  required>
+                {% for member in members %}
+                    <option value="{{member.id}}"> {{member.full_name()}} </option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div>    
         <label for="exclass">Select Class:</label>
-        <select name="exclass" id="exclass" required>
-        {% for exclass in exclasses %}
-        <option value="{{ exclass.id }}"> {{ exclass.name }}</option>
-        {% endfor %}
-        </select>
-    </div>
-    
-    <input type='submit' value="Book Class">
-</form>
+            <select name="exclass_id" id="exclass" required>
+                {% for exclass in exclasses %}
+                    <option value="{{ exclass.id }}"> {{ exclass.name }} </option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <input type='submit' value="Book Class">
+    </form>
 
 {% endblock %}

@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 from models.booking import Booking
+from models.member import Member
 
 import repositories.exclass_repository as exclass_repository
 import repositories.member_repository as member_repository
@@ -27,7 +28,6 @@ def select_all():
         bookings.append(booking)
     return bookings
 
-    
 # delete all bookings
 def delete_all():
     sql = "DELETE FROM bookings"
@@ -40,9 +40,20 @@ def delete(id):
     run_sql(sql, values)
 
 
-# ??show all members booked on specific class?? take/replace code from member repo 
 
 
+# get member by booking
+def get_by_exclass(exclass):
+    sql = "SELECT members.* FROM members INNER JOIN bookings ON members.id = bookings.member_id WHERE bookings.exclass_id = %s"
+    values = [exclass.id]
+    results = run_sql(sql, values)
+    
+    members = []
+    for row in results:
+        member = Member(row['first_name'], row['second_name'], row['age'], row['sex'], row['id'])
+        members.append(member)
+    
+    return members
 
 
 

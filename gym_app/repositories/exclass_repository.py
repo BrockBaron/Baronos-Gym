@@ -51,15 +51,3 @@ def update(exclass):
     values = [exclass.name, exclass.activity_type, exclass.duration, exclass.capacity, exclass.id]
     run_sql(sql, values)
     
-# get member by booking
-def get_by_exclass(exclass):
-    sql = "SELECT members.* FROM members INNER JOIN bookings ON members.id = bookings.member_id WHERE bookings.exclass_id = %s"
-    values = [exclass.id]
-    results = run_sql(sql, values)
-    
-    members = []
-    for row in results:
-        member = Member(row['first_name'], row['second_name'], row['age'], row['sex'], row['id'])
-        members.append(member)
-    
-    return members
