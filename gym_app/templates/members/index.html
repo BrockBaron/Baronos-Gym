@@ -2,24 +2,36 @@
 
 {% block content %}
 <h1>Memebers</h1>
+<div>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Second Name</th>
+            <th>Age</th>
+            <th>Sex</th>
+            <th>Member Id</th>
+            <th>Edit Memeber</th>
+        
+        </tr>
+        {% for member in members %}
+        <tr>
+            
+            <td> {{member.first_name}} </a></td>
+            <td> {{member.second_name}} </a></td>    
+            <td> {{member.age}} </a></td>    
+            <td> {{member.sex}} </a></td> 
+            <td> {{member.id}} </td>
+            <td><a href="/members/<id>/edit{{ member.id }}" </a> Info</td>  
+        </tr>
+        {% endfor %}
+    </table>
+</div>
 
-<table>
-    <tr>
-        <th>First Name</th>
-        <th>Second Name</th>
-        <th>Age</th>
-        <th>Sex</th>
-        <th>Edit Memeber</th>
-    
-    </tr>
-    {% for member in members %}
-    <tr>
-        <td> {{member.first_name}} </a></td>
-        <td> {{member.second_name}} </a></td>    
-        <td> {{member.age}} </a></td>    
-        <td> {{member.sex}} </a></td> 
-        <td><a href="/members/<id>/edit{{ member.id }}" </a> Info</td>  
-    </tr>
-    {% endfor %}
-</table>
+<div>
+    <button> <a href="/members/new">ADD MEMBER</a></button>
+</div>
+<div>
+    <button> <a href="/members/edit">EDIT MEMBER</a></button>
+</div>
+
 {% endblock content %}

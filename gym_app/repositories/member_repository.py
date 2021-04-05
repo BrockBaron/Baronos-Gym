@@ -39,7 +39,7 @@ def select(id):
 
 # update member
 def update(member):
-    sql = "UPDATE me SET (first_name, second_name, age, sex) = (%s, %s, %s, %s,) WHERE id = %s"
+    sql = "UPDATE member SET (first_name, second_name, age, sex) = (%s, %s, %s, %s,) WHERE id = %s"
     values = [member.first_name, member.second_name, member.age, member.sex, member.id]
 
 
