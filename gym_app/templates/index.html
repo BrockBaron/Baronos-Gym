@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-<!-- this page will contain the list of upcoming classes with quick links to booking onto specific classes -->
     <p>Bellson to Wellson</p>
 
 <Section>
+    <h2>Up-comming Classes</h2>
 <table>
     <tr>
         <th>Class Name</th>
@@ -12,13 +12,13 @@
         <th>Capacity</th>
         <th>Book Now</th>
     </tr>
-    {% for event in events%}
+    {% for exclass in exclasses %}
     <tr>
-        <td><a href="/classes/{{ class.id }}"> {{ exclass.name}}</a></td>
-        <td><a href="/classes/{{ class.id }}"> {{ exclass.activity_type}}</a></td>
-        <td><a href="/classes/{{ class.id }}"> {{ exclass.duration}}</a></td>
-        <td><a href="/classes/{{ class.id }}"> {{ exclass.capacity }}</a></td>
-        <td><a href="/bookings/new{{bookings.new(booking)}}">Book Now</a></td>
+        <td><a href="/classes/{{ exclass.id }}"> {{ exclass.name}}</a></td>
+        <td><a href="/classes/{{ exclass.id }}"> {{ exclass.activity_type}}</a></td>
+        <td><a href="/classes/{{ exclass.id }}"> {{ exclass.duration}}</a></td>
+        <td><a href="/classes/{{ exclass.id }}"> {{ exclass.capacity }}</a></td>
+        
     </tr>
     {% endfor%}
 </table>

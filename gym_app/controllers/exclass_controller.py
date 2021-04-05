@@ -11,7 +11,7 @@ exclasses_blueprint = Blueprint("classes", __name__)
 @exclasses_blueprint.route('/classes')
 def classes():
     classes = exclass_repository.select_all()
-    return render_template('classess/index.html', classes = classes)
+    return render_template('classes/index.html', classes = classes)
 
 
 #NEW 
