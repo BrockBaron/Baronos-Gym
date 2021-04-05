@@ -7,7 +7,7 @@ CREATE TABLE exclasses (
     name VARCHAR(255),
     activity_type VARCHAR(255),
     duration INT,
-    cpacity INT,
+    capacity INT
 );
 
 CREATE TABLE members (
