@@ -6,9 +6,9 @@ from models.exclass import Exclass
 import repositories.exclass_repository as exclass_repository
 import repositories.member_repository as member_repository
 
-exclass_blueprint = Blueprint("classes", __name__)
+exclasses_blueprint = Blueprint("classes", __name__)
 
-@exclass_blueprint.route('/classes')
+@exclasses_blueprint.route('/classes')
 def classes():
     classes = exclass_repository.select_all()
     return render_template('classess/index.html', classes = classes)
@@ -16,7 +16,7 @@ def classes():
 
 #NEW 
 #GET '/classes/new' 
-@exclass_blueprint.route('/classes/new', methods=['GET'])
+@exclasses_blueprint.route('/classes/new', methods=['GET'])
 def new_task():
     exclasses = exclass_repository.select_all()
     return render_template('classes/new.html', all_classes = exclasses)
@@ -24,7 +24,7 @@ def new_task():
 
 #CREATE 
 #POST '/classes' - possibly need to route to a create path for pop-up from etc. '/classes/create'
-@exclass_blueprint.route('/classes', methods=['POST'])
+@exclasses_blueprint.route('/classes', methods=['POST'])
 def create_exclass():
     name = request.form['name']
     activity_type = request.form['activity_type']
@@ -36,14 +36,14 @@ def create_exclass():
 
 # SHOW 
 #'/classes/<id>/  - possible GET method needed
-@exclass_blueprint.route('/classes/<id>')
+@exclasses_blueprint.route('/classes/<id>')
 def show_exclass(id):
     exclass = exclass_repository.select(id)
     return render_template('classes/show.html', exclass = exclass)
 
 #EDIT
 # GET '/classes/<id>/edit'
-@exclass_blueprint.route('/classes/<id>/edit', methods=['GET'])
+@exclasses_blueprint.route('/classes/<id>/edit', methods=['GET'])
 def edit_exclass(id):
     exclass = exclass_repository.select(id)
     return render_template('classes/edit.html', exclass = exclass)
@@ -51,7 +51,7 @@ def edit_exclass(id):
 
 #UPDATED
 # PUT '/classes/<id>'
-@exclass_blueprint.route('/classes/<id>', methods=['POST'])
+@exclasses_blueprint.route('/classes/<id>', methods=['POST'])
 def update_exclass(id):
     name = request.form['name']
     activity_type = request.form['activity_type']
@@ -63,7 +63,7 @@ def update_exclass(id):
 
 #DELETE 
 # DELETE '/classes/<id>'
-@exclass_blueprint.route('/classes/<id>/delete', methods=['POST'])
+@exclasses_blueprint.route('/classes/<id>/delete', methods=['POST'])
 def delete_exclass(id):
     exclass_repository.delete(id)
     return redirect('/classes')
