@@ -4,39 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baronos Gym</title>
+    <title>Baronos Gym - {{title}}</title>
 </head>
 <body>
     <header>
-
+        <h1>BaronosGym</h1>
     </header>
-    <main>
-        <tbody>
-            
-        </tbody>
-    </main>
+   
 
     <aside>
-        <nav>
+        <nav class="menu">
             <ul>
                 <li>
-                    <a href="/home">Home</a>
+                    <a href="{{ url_for('Home') }}">Home</a>
                 </li>
                 <li>
-                    <a href="/bookings">Bookings</a>
+                    <a href="{{ url_for('Bookings') }}">Bookings</a>
                 </li>
                 <li>
-                    <a href="/members">Members</a>
+                    <a href="{{ url_for('Members') }}">Members</a>
                 </li>
                 <li>
-                    <a href="/classes">Classes</a>
+                    <a href="{{ url_for('Classes') }}">Classes</a>
                 </li>
             </ul>
         </nav>
     </aside>
     
-    <footer>
+    <main>
+        
 
+
+        
+    </main>
+    <section id="">
+        {% block content %}
+            
+        {% endblock  %}
+    </section>
+    
+    <footer>
+        <h3>BaronosGym<h3>
     </footer>
 </body>
 </html>

@@ -1,5 +1,27 @@
-{% block  %}
-
+{% extends 'base.html' %}
+{% block content %}
 <!-- this page will contain the list of upcoming classes with quick links to booking onto specific classes -->
-    
+    <p>Bellson to Wellson</p>
+
+<Section>
+<table>
+    <tr>
+        <th>Class Name</th>
+        <th>Class Type</th>
+        <th>Duration</th>
+        <th>Capacity</th>
+        <th>Book Now</th>
+    </tr>
+    {% for event in events%}
+    <tr>
+        <td>{{ exclass.name}}</td>
+        <td>{{ exclass.activity_type}}</td>
+        <td>{{ exclass.duration}}</td>
+        <td>{{ exclass.capacity }}</td>
+        <td><a href="/bookings/new{{bookings.new(booking)}}">Book Now</a></td>
+    </tr>
+    {% endfor%}
+</table>
+</Section>
+
 {% endblock  %}

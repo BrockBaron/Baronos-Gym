@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Memebers</h1>
+
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Second Name</th>
+        <th>Age</th>
+        <th>Sex</th>
+    
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td><a href="/members/{{ member.id }}"> {{member.first_name}} {{member.second_name}} {{member.age}} {{member.sex}}</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock content %}
