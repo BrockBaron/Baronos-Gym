@@ -28,6 +28,29 @@ def select_all():
         bookings.append(booking)
     return bookings
 
+
+# select specific class by id
+def select(id):
+    booking = None
+    sql = 'SELECT * FROM bookings WHERE id = %s'
+    values = [id]
+    results = run_sql(sql, values)[0]
+    
+    if results is not None:
+        booking = Booking(results['member'], results['exclass'], results['id'])
+    return booking
+
+# update specific exclass
+def update(booking):
+    sql = "UPDATE bookings SET (member, exclass ) = (%s, %s) WHERE id = %s"
+    values = [booking.member, booking.exclass, booking.id]
+    run_sql(sql, values)
+
+
+
+
+
+
 # delete all bookings
 def delete_all():
     sql = "DELETE FROM bookings"

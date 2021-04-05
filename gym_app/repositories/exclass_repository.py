@@ -34,6 +34,12 @@ def select(id):
         exclass = Exclass(results['name'], results['activity_type'], results['duration'], results['capacity'], results['id'])
     return exclass
 
+# update specific exclass
+def update(exclass):
+    sql = "UPDATE exclasses SET (name, activity_type, duration, capacity) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [exclass.name, exclass.activity_type, exclass.duration, exclass.capacity, exclass.id]
+    run_sql(sql, values)
+    
 # delete all exclassess
 def delete_all():
     sql = "DELETE FROM exclasses"
@@ -45,9 +51,4 @@ def delete(id):
     values = [id]
     run_sql(sql, values)[0]
     
-# update specific exclass
-def update(exclass):
-    sql = "UPDATE exclasses SET (name, activity_type, duration, capacity) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [exclass.name, exclass.activity_type, exclass.duration, exclass.capacity, exclass.id]
-    run_sql(sql, values)
-    
+
