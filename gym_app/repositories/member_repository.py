@@ -6,7 +6,7 @@ from models.member import Member
 
 def save(member):
     sql = "INSERT INTO members (first_name, last_name, age, sex) VALUES (%s, %s, %s, %s) RETURNING *"
-    values = [member.first_name, member.last_, member.age, member.sex]
+    values = [member.first_name, member.second_name, member.age, member.sex]
     results = run_sql(sql, values)
     id = results[0]['id']
     member.id = id
@@ -21,7 +21,7 @@ def select_all():
     results = run_sql(sql,)
     
     for row in results:
-        member = Member(row['first_name'], row['last_name'], row['age'], row['sex'], row['id'])
+        member = Member(row['first_name'], row['second_name'], row['age'], row['sex'], row['id'])
         members.append(member)
     return members
 
@@ -34,12 +34,12 @@ def select(id):
     results = run_sql(sql, values)[0]
     
     if results is not None:
-        member = Member(results[0]['first_name'], results['last_name'], results['age'], results['sex'], results['id'])
+        member = Member(results[0]['first_name'], results['second_name'], results['age'], results['sex'], results['id'])
     return member
 
 # update member
 def update(member):
-    sql = "UPDATE me SET (first_name, last_name, age, sex) = (%s, %s, %s, %s,) WHERE id = %s"
+    sql = "UPDATE me SET (first_name, second_name, age, sex) = (%s, %s, %s, %s,) WHERE id = %s"
     values = [member.first_name, member.last_name, member.age, member.sex, member.id]
 
 
@@ -64,7 +64,7 @@ def get_by_exclass(exclass):
     
     members = []
     for row in results:
-        member = Member(row['first_name'], row['last_name'], row['age'], row['sex'], row['id'])
+        member = Member(row['first_name'], row['second_name'], row['age'], row['sex'], row['id'])
         members.append(member)
     
     return members

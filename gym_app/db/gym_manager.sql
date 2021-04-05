@@ -1,6 +1,6 @@
 DROP TABLE bookings;
 DROP TABLE members;
-DROP TABLE classes;
+DROP TABLE exclasses;
 
 CREATE TABLE exclasses (
     id SERIAL PRIMARY KEY,
