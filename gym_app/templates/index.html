@@ -14,10 +14,10 @@
     </tr>
     {% for event in events%}
     <tr>
-        <td>{{ exclass.name}}</td>
-        <td>{{ exclass.activity_type}}</td>
-        <td>{{ exclass.duration}}</td>
-        <td>{{ exclass.capacity }}</td>
+        <td><a href="/classes/{{ class.id }}"> {{ exclass.name}}</a></td>
+        <td><a href="/classes/{{ class.id }}"> {{ exclass.activity_type}}</a></td>
+        <td><a href="/classes/{{ class.id }}"> {{ exclass.duration}}</a></td>
+        <td><a href="/classes/{{ class.id }}"> {{ exclass.capacity }}</a></td>
         <td><a href="/bookings/new{{bookings.new(booking)}}">Book Now</a></td>
     </tr>
     {% endfor%}
