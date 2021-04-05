@@ -28,7 +28,7 @@ def bookins():
 #GET '/bookings/new'
 @bookings_blueprint.route('/bookings/new', methods=['GET'])
 def new_booking():
-    bookings =booking_repository.select_all()
+    bookings = booking_repository.select_all()
     return render_template('bookings/new.html', all_bookings=bookings)
 
 
