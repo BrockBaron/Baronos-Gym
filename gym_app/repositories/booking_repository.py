@@ -7,7 +7,7 @@ import repositories.member_repository as member_repository
 
 # save new bookings, generate uniques booking number / id
 def save(booking):
-    sql = "INSER INTO bookings (member_id, exclass_id) VALUES (%s, %s, %s) RETURNING id"
+    sql = "INSERT INTO bookings (member_id, exclass_id) VALUES (%s, %s) RETURNING id"
     values = [booking.member.id, booking.exclass.id]
     results = run_sql(sql, values)
     booking.id = results[0]['id']
