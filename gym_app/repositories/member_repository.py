@@ -5,7 +5,7 @@ from models.member import Member
 # add / save new member 
 
 def save(member):
-    sql = "INSERT INTO members (first_name, last_name, age, sex) VALUES (%s, %s, %s, %s) RETURNING *"
+    sql = "INSERT INTO members (first_name, second_name, age, sex) VALUES (%s, %s, %s, %s) RETURNING *"
     values = [member.first_name, member.second_name, member.age, member.sex]
     results = run_sql(sql, values)
     id = results[0]['id']
@@ -40,7 +40,7 @@ def select(id):
 # update member
 def update(member):
     sql = "UPDATE me SET (first_name, second_name, age, sex) = (%s, %s, %s, %s,) WHERE id = %s"
-    values = [member.first_name, member.last_name, member.age, member.sex, member.id]
+    values = [member.first_name, member.second_name, member.age, member.sex, member.id]
 
 
 # delete all members

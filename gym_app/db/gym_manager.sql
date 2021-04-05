@@ -5,7 +5,7 @@ DROP TABLE exclasses;
 CREATE TABLE exclasses (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    type VARCHAR(255),
+    activity_type VARCHAR(255),
     duration INT,
     cpacity INT,
 );
