@@ -3,23 +3,31 @@
 {% block content %}
 <h1>Bookings</h1>
 
+<div>
     <table>
-    <tr>
-        <th>Member Id</th>
-        <th>Memeber Name</th>
-        <th>Class Id</th>
-        <th>Capacity</th>
-        <th>Edit Booking Info</th>
-    </tr>
-    {% for booking in bookings %}
-    <tr>
-        <td>{{ booking.member.id}}</td>
-        <td>{{ booking.member.first_name}} {{booking.member.second_name}}</td>
-        <td>{{ booking.exclass.id}}</td>
-        <td>{{ booking.exclass.name}}</td>
-        <td>{{ booking.exclass.capacity}}</td>
-        <td><a href="/bookings/<id>/edit{{ booking.id }}" </a> Info</td>
-    </tr>
-    {% endfor%}
+        <tr>
+            <th>Member Id</th>
+            <th>Memeber Name</th>
+            <th>Class Id</th>
+            <th>Class Name</th>
+            <th>Capacity</th>
+            <th>Edit Booking Info</th>
+        </tr>
+        {% for booking in bookings %}
+        <tr>
+            <td>{{ booking.member.id}}</td>
+            <td>{{ booking.member.full_name()}}</td>
+            <td>{{ booking.exclass.id}}</td>
+            <td>{{ booking.exclass.name}}</td>
+            <td>{{ booking.exclass.capacity}}</td>
+            <td><a href="/bookings/<id>/edit{{ booking.id }}" </a> Info</td>
+        </tr>
+        {% endfor%}
     </table>
+<div>
+
+<div>
+    <button> <a href="/bookings/new">ADD BOOKING</a></button>
+</div>
+
 {% endblock %}

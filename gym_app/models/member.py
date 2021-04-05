@@ -6,3 +6,5 @@ class Member:
         self.sex = sex
         self.id = id
     
+    def full_name(self):
+        return f"{self.first_name} {self.second_name}"
