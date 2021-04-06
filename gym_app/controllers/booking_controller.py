@@ -46,13 +46,6 @@ def show_booking(id):
     return render_template('bookings/show.html', booking=booking, members=members)
 
 
-# SHOW - member in particular class - need an alternative route? '/bookings/<id>/exclass'?
-# @bookings_blueprint.route('/bookings/<id>')
-# def show(id):
-#     exclass = exclass_repository.select(id)
-#     members = member_repository.get_by_exclass(exclass)
-#     return render_template('bookings/show.html', exclass = exclass, members = members)
-
 
 #EDIT
 # GET '/bookings/<id>/edit'
