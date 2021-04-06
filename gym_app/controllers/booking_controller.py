@@ -51,9 +51,10 @@ def show_booking(id):
 # GET '/bookings/<id>/edit'
 @bookings_blueprint.route('/bookings/<id>/edit', methods = ['GET'])
 def edit_booking(id):
-    exclass = exclass_repository.select(id)
+    booking = booking_repository.select(id)
+    exclasses = exclass_repository.select_all()
     members = member_repository.select_all()
-    return redirect('/bookings/edit.html', exclass = exclass, members = members)
+    return render_template('/bookings/edit.html', exclasses = exclasses, members = members, booking=booking)
     
 
 
@@ -74,7 +75,7 @@ def update_booking(id):
 
 #DELETE 
 # DELETE '/bookings/<id>'
-@bookings_blueprint.route('/bookins/<id>/delete', methods = ['POST'])
+@bookings_blueprint.route('/bookings/<id>/delete', methods = ['POST'])
 def delete_booking(id):
     booking_repository.delete(id)
-    return redirect('/bookins')
+    return redirect('/bookings')
