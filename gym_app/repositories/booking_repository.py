@@ -35,9 +35,11 @@ def select(id):
     sql = 'SELECT * FROM bookings WHERE id = %s'
     values = [id]
     results = run_sql(sql, values)[0]
+    member = member_repository.select(results['member_id'])
+    exclass = exclass_repository.select(results['exclass_id'])
     
     if results is not None:
-        booking = Booking(results['member'], results['exclass'], results['id'])
+        booking = Booking(member, exclass, results['id'])
     return booking
 
 # update specific exclass

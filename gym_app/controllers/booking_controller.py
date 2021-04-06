@@ -18,7 +18,9 @@ def booking():
 @bookings_blueprint.route('/bookings/new', methods=['GET'])
 def new_booking():
     bookings = booking_repository.select_all()
-    return render_template('bookings/new.html', all_bookings=bookings)
+    members = member_repository.select_all()
+    exclasses = exclass_repository.select_all()
+    return render_template('bookings/new.html', all_bookings=bookings, members = members, exclasses=exclasses)
 
 
 #CREATE 
@@ -43,11 +45,11 @@ def show_booking(id):
 
 
 # SHOW - member in particular class - need an alternative route? '/bookings/<id>/exclass'?
-@bookings_blueprint.route('/bookings/<id>')
-def show_members_in_exclass(id):
-    exclass = exclass_repository.select(id)
-    members = member_repository.get_by_exclass(exclass)
-    return render_template('bookings/show.html', exclass = exclass, members = members)
+# @bookings_blueprint.route('/bookings/<id>')
+# def show(id):
+#     exclass = exclass_repository.select(id)
+#     members = member_repository.get_by_exclass(exclass)
+#     return render_template('bookings/show.html', exclass = exclass, members = members)
 
 
 #EDIT
