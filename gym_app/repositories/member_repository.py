@@ -53,7 +53,7 @@ def delete_all():
 def delete(id):
     sql = "DELETE FROM members WHERE id = %s"
     values = [id]
-    run_sql(sql, values)[0]
+    run_sql(sql, values)
     
     
 # get member by booking
