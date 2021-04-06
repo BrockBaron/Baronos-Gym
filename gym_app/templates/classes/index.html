@@ -17,8 +17,7 @@
         <td> {{ exclass.activity_type}}</a></td>
         <td>{{ exclass.duration}}</a></td>
         <td> {{ exclass.capacity }}</td>
-        <td><a href="/classes/<id>/edit{{ exclass.id }}" </a> Info</td>
-        
+        <td><button><a href="/classes/{{ exclass.id }}/edit" </a> Edit</button></td>
     </tr>
     {% endfor%}
   </table>

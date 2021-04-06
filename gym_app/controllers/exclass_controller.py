@@ -59,7 +59,7 @@ def update_exclass(id):
     capacity = request.form['capacity']
     exclass = Exclass(name, activity_type, duration, capacity, id)
     exclass_repository.update(exclass)
-    return render_template('/classes')
+    return redirect('/classes')
 
 #DELETE 
 # DELETE '/classes/<id>'
