@@ -21,7 +21,7 @@
             <td> {{member.age}} </a></td>    
             <td> {{member.sex}} </a></td> 
             <td> {{member.id}} </td>
-            <td><a href="/members/<id>/edit{{ member.id }}" </a> Info</td>  
+            <td><a href="/members/{{member.id}}/edit" </a> Edit</td>  
         </tr>
         {% endfor %}
     </table>

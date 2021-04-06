@@ -55,11 +55,11 @@ def update_member(id):
     sex = request.form['sex']
     member = Member(first_name, second_name, age, sex, id)
     member_repository.update(member)
-    return render_template("/members")
+    return redirect("/members")
 
 #DELETE 
 # DELETE '/members/<id>'
 @members_blueprint.route('/members/<id>/delete')
 def delete_member(id):
     member_repository.delete(id)
-    return render_template("/members")
+    return redirect("/members")

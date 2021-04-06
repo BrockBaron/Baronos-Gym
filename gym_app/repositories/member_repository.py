@@ -17,7 +17,7 @@ def save(member):
 def select_all():
     members = []
     
-    sql = "SELECT * FROM members"
+    sql = "SELECT * FROM members ORDER BY id"
     results = run_sql(sql,)
     
     for row in results:
@@ -39,7 +39,7 @@ def select(id):
 
 # update member
 def update(member):
-    sql = "UPDATE member SET (first_name, second_name, age, sex) = (%s, %s, %s, %s,) WHERE id = %s"
+    sql = "UPDATE members SET (first_name, second_name, age, sex) = (%s, %s, %s, %s) WHERE id = %s"
     values = [member.first_name, member.second_name, member.age, member.sex, member.id]
     run_sql(sql, values)
 
