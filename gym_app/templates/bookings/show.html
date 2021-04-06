@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Booking {{ booking.id }} : {{ booking.exclass.name }}</h2>
+<h2>Class No.{{ booking.id }} : {{ booking.exclass.name }}</h2>
 
-<h3>Members in class:</h3>
+<h3>Members booked in class:</h3>
 <ul>
-    {% for memebr in members %}
-        <li>{{ member.name }}</li>
+    {% for member in members %}
+        <li>{{ member.full_name() }}</li>
     {% endfor %}
 </ul>
 

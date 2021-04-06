@@ -54,3 +54,17 @@ def delete(id):
     sql = "DELETE FROM members WHERE id = %s"
     values = [id]
     run_sql(sql, values)[0]
+    
+    
+# get member by booking
+def get_by_exclass(exclass):
+    sql = "SELECT members.* FROM members INNER JOIN bookings ON members.id = bookings.member_id WHERE bookings.exclass_id = %s"
+    values = [exclass.id]
+    results = run_sql(sql, values)
+    
+    members = []
+    for row in results:
+        member = Member(row['first_name'], row['second_name'], row['age'], row['sex'], row['id'])
+        members.append(member)
+    
+    return members

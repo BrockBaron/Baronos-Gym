@@ -42,15 +42,13 @@ def select(id):
         booking = Booking(member, exclass, results['id'])
     return booking
 
+
+
 # update specific exclass
 def update(booking):
     sql = "UPDATE bookings SET (member, exclass ) = (%s, %s) WHERE id = %s"
     values = [booking.member, booking.exclass, booking.id]
     run_sql(sql, values)
-
-
-
-
 
 
 # delete all bookings
@@ -67,18 +65,6 @@ def delete(id):
 
 
 
-# get member by booking
-def get_by_exclass(exclass):
-    sql = "SELECT members.* FROM members INNER JOIN bookings ON members.id = bookings.member_id WHERE bookings.exclass_id = %s"
-    values = [exclass.id]
-    results = run_sql(sql, values)
-    
-    members = []
-    for row in results:
-        member = Member(row['first_name'], row['second_name'], row['age'], row['sex'], row['id'])
-        members.append(member)
-    
-    return members
 
 
 
