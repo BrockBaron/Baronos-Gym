@@ -6,31 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <title>Baronos Gym </title>
+    <title> Baronos Gym </title>
+    
 </head>
-<body>
+<body >
+    
     <header>
+        <section class="header-section"> 
+            <img src="url('/static/images/crest.jpg')"" alt="logo">
+        </section>
         <h1>BaronosGym</h1>
+        <!-- <div class="header">
+            <img src="url('/static/images/crest.jpg')" alt="logo" />
+            <h1>BaronosGym</h1>
+            </div> -->
+
+
+            <!-- <h1>BaronosGym</h1> -->
+        <!-- </div> -->
     </header>
 
-    <aside>
-        <nav class="menu">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/bookings">Bookings</a></li>
-                <li><a href="/members">Members</a></li>
-                <li><a href="/classes">Classes</a></li>
-            </ul>
-        </nav>
-    </aside>
+    <nav class="menu">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/bookings">Bookings</a></li>
+            <li><a href="/members">Members</a></li>
+            <li><a href="/classes">Classes</a></li>
+        </ul>
+    </nav>
     
-    <main>
+    <main >
         
 
 
         
     </main>
-    <section id="">
+    <section >
         {% block content %}
             
         {% endblock  %}
