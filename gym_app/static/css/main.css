@@ -1,0 +1,8 @@
+body{
+font-family: 'Raleway', sans-serif; font-size: 16px;
+background-image: linear-gradient(rgba(229, 244, 96,0.25), rgba(229, 244, 96, 0.25)), url('/static/images/background.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+padding: 0px;
+margin: 0px;
+}

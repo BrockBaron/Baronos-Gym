@@ -64,7 +64,23 @@ def delete(id):
 
 
 
+#CHECK CLASS CAPACITY AND ADD MEMEBER TO CLASS IF THERE IS SPACE
+#get class capacity
+# check/ count member quanty in class
+#compare member count in class with class capcity
 
+# if booking.exclass.capcity <= exclass.capcity
+# return True
+
+# if  space in exclass = true then add member to class list
+# if  space in exclass = false then return string class is full
+
+#display on classes index page whether class has 'space' or 'full'
+
+# def check():
+#     capcity = 
+    
+#     capacity = exclass_repository.select(capacity)
 
 
 

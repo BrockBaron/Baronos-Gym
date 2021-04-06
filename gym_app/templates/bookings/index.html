@@ -9,6 +9,7 @@
             <th>Class id</th>
             <th>Class Name</th>
             <th>Capacity</th>
+            <th>Class Space</th>
             <th>Member Name</th>
             <th>Edit Booking</th>
             <th>Members in Class</th>
@@ -18,6 +19,7 @@
             <td>{{ booking.exclass.id}}</td>
             <td>{{ booking.exclass.name}}</td>
             <td>{{ booking.exclass.capacity}}</td>
+            <td>Space/Full</td>
             <td>{{ booking.member.full_name() }}</td>
             <td><button><a href="/bookings/{{ booking.id }}/edit"</a> Edit</button></td>
             <td><button><a href="/bookings/{{ booking.id }} "</a>Show</button></td>
