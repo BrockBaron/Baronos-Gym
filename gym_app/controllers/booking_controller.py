@@ -40,10 +40,10 @@ def create_booking():
 #/bookings/<id>/ 
 @bookings_blueprint.route('/bookings/<id>')
 def show_booking(id):
-    exclass = exclass_repository.select(id)
     booking = booking_repository.select(id)
+    exclass = booking.exclass
     members = member_repository.get_by_exclass(exclass)
-    return render_template('bookings/show.html', booking=booking, members=members, exclass=exclass)
+    return render_template('bookings/show.html', booking=booking, members=members)
 
 
 # SHOW - member in particular class - need an alternative route? '/bookings/<id>/exclass'?

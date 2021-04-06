@@ -9,14 +9,16 @@
             <th>Class id</th>
             <th>Class Name</th>
             <th>Capacity</th>
+            <th>Member Name</th>
             <th>Edit Booking</th>
-            <th>Members Booked</th>
+            <th>Members Booked in Class</th>
         </tr>
         {% for booking in bookings %}
         <tr>
             <td>{{ booking.exclass.id}}</td>
             <td>{{ booking.exclass.name}}</td>
             <td>{{ booking.exclass.capacity}}</td>
+            <td>{{ booking.member.full_name() }}</td>
             <td><a href="/bookings/<id>/edit{{ booking.id }}"</a> Info</td>
             <td><a href="/bookings/{{ booking.id }} "</a>Show</td>
         </tr>
