@@ -19,7 +19,7 @@
         <td> {{ exclass.activity_type}}</a></td>
         <td>{{ exclass.duration}}</a></td>
         <td> {{ exclass.capacity }}</td>
-        <td><button class="action-btn"><a href="/classes/{{ exclass.id }}/edit" </a> Edit</button></td>
+        <td><button class="action--btn"><a href="/classes/{{ exclass.id }}/edit" </a> Edit</button></td>
     </tr>
     {% endfor%}
     <tbody> 
@@ -27,7 +27,7 @@
 </div>
 
 <div>
-  <button class="add-btn"> <a href="/classes/new">ADD CLASS</a></button>
+  <button class="add--btn"> <a href="/classes/new">ADD CLASS</a></button>
 </div>
 
 {% endblock %}

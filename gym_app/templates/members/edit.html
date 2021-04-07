@@ -23,11 +23,11 @@
         <input type="text" name="sex" id="sex" value="{{member.sex}}" reqiured>
     </div>
 
-    <button type="submit"> Update Member</button>
+    <button class="action--btn" type="submit"> Update Member</button>
 </form>
 
 <form action="/members/{{member.id}}/delete" method="post"> 
-    <button> DELETE </button>
+    <button class="btn--danger"> DELETE </button>
     </form> 
 
 {% endblock content %}

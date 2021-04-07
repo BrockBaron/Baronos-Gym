@@ -25,8 +25,8 @@
                 <td>{{ booking.exclass.capacity}}</td>
                 <td>Space/Full</td>
                 <td>{{ booking.member.full_name() }}</td>
-                <td><button class="action-btn" ><a href="/bookings/{{ booking.id }}/edit"</a> Edit</button></td>
-                <td><button class="action-btn" ><a href="/bookings/{{ booking.id }} "</a>Show</button></td>
+                <td><button class="action--btn" ><a href="/bookings/{{ booking.id }}/edit"</a> Edit</button></td>
+                <td><button class="action--btn" ><a href="/bookings/{{ booking.id }} "</a>Show</button></td>
             </tr>
         </tbody> 
         {% endfor%}
@@ -35,7 +35,7 @@
 <div>
 
 <div>
-    <button class="add-btn"> <a href="/bookings/new">ADD BOOKING</a></button>
+    <button class="add--btn"> <a href="/bookings/new">ADD BOOKING</a></button>
 </div>
 
 {% endblock %}
