@@ -1,6 +1,6 @@
 body{
 font-family: 'Raleway', sans-serif; font-size: 16px;
-background-image: linear-gradient(rgba(229, 244, 96,0.25), rgba(229, 244, 96, 0.25)), url('/static/images/background.jpg');
+background-image: linear-gradient(rgba(28, 156, 241, 0.514), rgba(245, 206, 32, 0.5)), url('/static/images/background.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 padding: 0px;
