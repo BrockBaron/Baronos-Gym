@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<h2> Edit Member</h2>
 <form action="/members/{{member.id}}" method="post">
     <div>
         <label for="first_name"> First Name</label>
@@ -23,7 +23,7 @@
         <input type="text" name="sex" id="sex" value="{{member.sex}}" reqiured>
     </div>
 
-    <button class="action--btn" type="submit"> Update Member</button>
+    <button class="input-btn"><input type='submit' value="UPDATE MEMBER"></button>
 </form>
 
 <form action="/members/{{member.id}}/delete" method="post"> 

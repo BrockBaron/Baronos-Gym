@@ -49,12 +49,15 @@ width: 100%;
     color: rgb(188, 218, 57)
 }
 
-h1, h2 {
+h1, h2, h3 {
     position: relative;
-    top: 18px;
+    
     left: 10px;
-    color: rgb(188, 218, 57)
+    color: rgb(188, 218, 57);
+    padding: 5px;
 }
+
+
 
 a, a:link, a:visited {
 color: rgb(188, 218, 57);
@@ -71,6 +74,7 @@ padding-right: 25px;
 nav ul li {
 margin-bottom: 15px;
 text-transform: uppercase;
+color: rgb(188, 218, 57);
 }
 
 ul {
@@ -220,4 +224,10 @@ input {
     mix-blend-mode: multiply;
     padding: 10px;
     
+}
+
+.li-col {
+    color: rgb(188, 218, 57);
+    text-align: left;
+    margin-left: 15px;
 }
