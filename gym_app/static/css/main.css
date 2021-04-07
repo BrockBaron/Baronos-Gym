@@ -92,7 +92,7 @@ list-style-type: none;
 /* Table stlyling */
 .content-table {
     border-collapse: collapse;
-    margin: 25px 0;
+    margin: 35px;
     font-size: 0.9em;
     min-width: 400px;
     box-shadow: 0 0 20px rgb(2, 2, 2, 0.15);
@@ -114,11 +114,10 @@ list-style-type: none;
 
 
 th {
-    
     padding: 12px 15px;
     color: rgb(0, 0, 0);
     border-bottom: thin solid rgba(255, 255, 255);
-    background-color: rgba(73, 226, 93, 0.6);
+    background-color: #3384fd67 ;
     text-align: left;
     margin: 25px 0;
     font-size: 0.9em;
@@ -130,10 +129,10 @@ td {
 }
 
 tbody tr:nth-of-type(even) {
-    background-color:rgba(130, 131, 126, 0.87);
+    background-color:rgba(130, 131, 126, 0.815);
 }
 tbody tr:nth-of-type(odd) {
-    background-color:rgba(197, 135, 41, 0.87);
+    background-color: #fc6e2286;
 }
 tbody tr:last-of-type {
     border-bottom: 2px solid rgba(255, 255, 255);
