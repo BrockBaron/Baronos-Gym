@@ -1,28 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-    <p>Bellson to Wellson</p>
 
 <Section>
     <h2>Up-coming Classes</h2>
-<table>
-    <tr>
-        <th>Class Name</th>
-        <th>Class Type</th>
-        <th>Duration</th>
-        <th>Capacity</th>
-        <th>Book Now</th>
-    </tr>
-    {% for exclass in exclasses %}
-    <tr>
-        <td>{{ exclass.name}}</a></td>
-        <td>{{ exclass.activity_type}}</a></td>
-        <td>{{ exclass.duration}}</a></td>
-        <td>{{ exclass.capacity }}</a></td>
-        <td><a href="/bookings/new" </a> Book Now</td>
-        <!-- need to route book now to the apporpriate link -->
-    </tr>
+    <table Class="Content-tabel">
+        <thead>
+            <tr>
+                <th>Class Name</th>
+                <th>Class Type</th>
+                <th>Duration</th>
+                <th>Capacity</th>
+                <th>Book Now</th>
+            </tr>
+        <thead>
+        <tbody>
+            {% for exclass in exclasses %}
+            <tr class="active-row">
+                <td>{{ exclass.name}}</a></td>
+                <td>{{ exclass.activity_type}}</a></td>
+                <td>{{ exclass.duration}}</a></td>
+                <td>{{ exclass.capacity }}</a></td>
+                <td><button class="action-btn"> <a href="/bookings/new" </a>Book Now</button> </td>
+                <!-- need to route book now to the apporpriate link -->
+            </tr>
+        </tbody>    
+            
     {% endfor%}
-</table>
+    </table>
 </Section>
 
 {% endblock  %}

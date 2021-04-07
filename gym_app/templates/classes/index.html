@@ -4,6 +4,7 @@
 <h1>Classes</h1>
 <div>
   <table>
+    <thead> 
     <tr>
         <th>Class Name</th>
         <th>Class Type</th>
@@ -11,20 +12,22 @@
         <th>Capacity</th>
         <th>Edit Class Info</th>
     </tr>
+    </thead> 
     {% for exclass in exclasses %}
     <tr>
         <td>{{ exclass.name}}</a></td>
         <td> {{ exclass.activity_type}}</a></td>
         <td>{{ exclass.duration}}</a></td>
         <td> {{ exclass.capacity }}</td>
-        <td><button><a href="/classes/{{ exclass.id }}/edit" </a> Edit</button></td>
+        <td><button class="action-btn"><a href="/classes/{{ exclass.id }}/edit" </a> Edit</button></td>
     </tr>
     {% endfor%}
+    <tbody> 
   </table>
 </div>
 
 <div>
-  <button> <a href="/classes/new">ADD CLASS</a></button>
+  <button class="add-btn"> <a href="/classes/new">ADD CLASS</a></button>
 </div>
 
 {% endblock %}

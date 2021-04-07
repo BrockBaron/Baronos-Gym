@@ -4,32 +4,38 @@
 <h1>Bookings</h1>
 
 <div>
-    <table>
-        <tr>
-            <th>Class id</th>
-            <th>Class Name</th>
-            <th>Capacity</th>
-            <th>Class Space</th>
-            <th>Member Name</th>
-            <th>Edit Booking</th>
-            <th>Members in Class</th>
-        </tr>
+    <table Class="Content-tabel">
+        <thead> 
+            <tr>
+                <th>Class id</th>
+                <th>Class Name</th>
+                <th>Capacity</th>
+                <th>Class Space</th>
+                <th>Member Name</th>
+                <th>Edit Booking</th>
+                <th>Members in Class</th>
+            </tr>
+        <thead> 
+        
         {% for booking in bookings %}
-        <tr>
-            <td>{{ booking.exclass.id}}</td>
-            <td>{{ booking.exclass.name}}</td>
-            <td>{{ booking.exclass.capacity}}</td>
-            <td>Space/Full</td>
-            <td>{{ booking.member.full_name() }}</td>
-            <td><button><a href="/bookings/{{ booking.id }}/edit"</a> Edit</button></td>
-            <td><button><a href="/bookings/{{ booking.id }} "</a>Show</button></td>
-        </tr>
+        <tbody class="active-row"> 
+            <tr>
+                <td>{{ booking.exclass.id}}</td>
+                <td>{{ booking.exclass.name}}</td>
+                <td>{{ booking.exclass.capacity}}</td>
+                <td>Space/Full</td>
+                <td>{{ booking.member.full_name() }}</td>
+                <td><button class="action-btn" ><a href="/bookings/{{ booking.id }}/edit"</a> Edit</button></td>
+                <td><button class="action-btn" ><a href="/bookings/{{ booking.id }} "</a>Show</button></td>
+            </tr>
+        </tbody> 
         {% endfor%}
+    
     </table>
 <div>
 
 <div>
-    <button> <a href="/bookings/new">ADD BOOKING</a></button>
+    <button class="add-btn"> <a href="/bookings/new">ADD BOOKING</a></button>
 </div>
 
 {% endblock %}

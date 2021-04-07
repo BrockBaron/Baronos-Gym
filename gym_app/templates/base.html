@@ -11,7 +11,7 @@
 </head>
 <body >
     
-    <header>
+    <header class="header">
         <section class="header-section"> 
             <img src="url('/static/images/crest.jpg')"" alt="logo">
         </section>
@@ -26,28 +26,27 @@
         <!-- </div> -->
     </header>
 
-    <nav class="menu">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/bookings">Bookings</a></li>
-            <li><a href="/members">Members</a></li>
-            <li><a href="/classes">Classes</a></li>
-        </ul>
-    </nav>
-    
-    <main >
-        
+    <main class = "flex flex--row">
+        <nav class="menu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/bookings">Bookings</a></li>
+                <li><a href="/members">Members</a></li>
+                <li><a href="/classes">Classes</a></li>
+            </ul>
+        </nav>
 
 
-        
-    </main>
     <section >
         {% block content %}
             
         {% endblock  %}
     </section>
+    </main>
+
     
-    <footer>
+    
+    <footer class="footer">
         <h3>BaronosGym <h3>
     </footer>
 </body>

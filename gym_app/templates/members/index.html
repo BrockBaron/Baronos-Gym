@@ -4,6 +4,7 @@
 <h1>Memebers</h1>
 <div>
     <table>
+        <thead>
         <tr>
             <th>First Name</th>
             <th>Second Name</th>
@@ -11,8 +12,9 @@
             <th>Sex</th>
             <th>Member Id</th>
             <th>Edit Memeber</th>
-        
         </tr>
+        </thead>
+        <tbody>
         {% for member in members %}
         <tr>
             
@@ -24,11 +26,12 @@
             <td><button><a href="/members/{{member.id}}/edit" </a> Edit</button></td> 
         </tr>
         {% endfor %}
+        </tbody>
     </table>
 </div>
 
 <div>
-    <button> <a href="/members/new">ADD MEMBER</a></button>
+    <button class="add-btn"> <a href="/members/new">ADD MEMBER</a></button>
 </div>
 
 
