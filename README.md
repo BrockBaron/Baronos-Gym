@@ -58,15 +58,17 @@ The project met all MVP requirements with some custom extensions.
 - Looked more futuristic / sci-fi;
 - Used grid template;
 - Built more functionality into data presented coupled with add-ons;
-- Used dates/time, class capacity, membership, Calendar views, Trainers,Performance Streaks (target classes based on behaviour);
+- Used dates/time, class capacity, membership, Calendar views, Trainers, Performance Streaks (target classes based on behaviour);
 - Better colour pallet.
 
 
 ### Possible next steps to improve app
 
 - Build on Python functionality and capability to make app more efficient;
-- Re-build app in react to utilise sci-fi frameworks.
-
+- Re-build app in react to utilise sci-fi frameworks and dashboard layouts;
+- Build in multiple memeber select options;
+- Adapt for mobile devices;
+- Re-configure tablulated layout for better experence.
 
 
 ## How to run the App (reminder)
