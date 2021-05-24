@@ -1,5 +1,5 @@
 
-## Baronons Gym App
+## Baronos Gym App
 
 ### Brief
 A local gym has asked you to build a piece of software to help them to manage memberships, and register members for classes.
